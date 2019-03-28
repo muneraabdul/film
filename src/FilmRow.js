@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
+import  FilmPoster from './filmPoster';
+import Fave from './Fave';
+
 
 class FilmRow extends Component {
+ 
     render() {
-   var year = this.props.films.release_date.split("-")
+     
       return (
-        <div className="film-row">
-        <img src={"https://image.tmdb.org/t/p/w200/"+this.props.films.poster_path} alt="" />
+        <div className="film-row" onClick={this.props.onDetailsClick}>
+        <FilmPoster poster={this.props.film.poster_path}/>
+       {/* // <img src={"https://image.tmdb.org/t/p/w200/"+this.props.films.poster_path} alt="" /> */}
         <div className="film-summary">
-          <h1 >{this.props.films.title}</h1>
-
-          <p>{year[0]}</p>
+        <Fave onFaveToggle = {this.props.onFaveToggle} isFave={this.props.isFave} />
+          <h1 >{this.props.film.title}</h1>
+          <p>{this.props.film.release_date.split("-")[0]}</p>
         </div>
       </div>
      
