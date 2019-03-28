@@ -30,13 +30,7 @@ if(filmIndex === -1){
     newFaves.splice(filmIndex,1)
     console.log(`Removing${film} from faves....`); 
   }
-  // if(filmIndex >=0 ){
-  //   newFaves.splice(filmIndex,1)
-  //   console.log(`Adding ${film} to faves...`); 
-  // }else {
-  //   newFaves.push(film)
-  //   console.log(`Removing${film} from faves....`); 
-  // }
+
   this.setState({faves:newFaves})
 
  }
